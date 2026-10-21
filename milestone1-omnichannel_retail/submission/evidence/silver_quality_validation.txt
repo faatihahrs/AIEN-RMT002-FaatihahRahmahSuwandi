@@ -1,0 +1,24 @@
+﻿      rejection_reason      | records 
+----------------------------+---------
+ DUPLICATE_EVENT_SUPERSEDED |    2006
+ DUPLICATE_ORDER_SUPERSEDED |       1
+ NONPOSITIVE_QUANTITY       |       1
+ UNKNOWN_PRODUCT            |       3
+(4 rows)
+
+            check_name             | check_status | failure_count 
+-----------------------------------+--------------+---------------
+ broken_financial_event_references | PASS         |             0
+ broken_item_references            | PASS         |             0
+ broken_order_customer_reference   | PASS         |             0
+ bronze_silver_reconciliation      | PASS         |             0
+ duplicate_event_keys              | PASS         |             0
+ duplicate_order_item_keys         | PASS         |             0
+ duplicate_order_keys              | PASS         |             0
+ invalid_inventory_values          | PASS         |             0
+ invalid_order_item_values         | PASS         |             0
+ invalid_temporal_ranges           | PASS         |             0
+ missing_bronze_lineage            | PASS         |             0
+ unclassified_rejections           | PASS         |             0
+(12 rows)
+

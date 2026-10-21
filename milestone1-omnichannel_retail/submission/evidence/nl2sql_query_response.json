@@ -1,0 +1,374 @@
+﻿{
+    "question":  "What was the daily net revenue?",
+    "sql":  "SELECT metric_date, net_revenue FROM gold.executive_kpis_daily ORDER BY metric_date",
+    "columns":  [
+                    "metric_date",
+                    "net_revenue"
+                ],
+    "rows":  [
+                 {
+                     "metric_date":  "2026-06-22",
+                     "net_revenue":  "148586.40"
+                 },
+                 {
+                     "metric_date":  "2026-06-23",
+                     "net_revenue":  "150208.63"
+                 },
+                 {
+                     "metric_date":  "2026-06-24",
+                     "net_revenue":  "128670.56"
+                 },
+                 {
+                     "metric_date":  "2026-06-25",
+                     "net_revenue":  "121962.98"
+                 },
+                 {
+                     "metric_date":  "2026-06-26",
+                     "net_revenue":  "139799.40"
+                 },
+                 {
+                     "metric_date":  "2026-06-27",
+                     "net_revenue":  "139188.94"
+                 },
+                 {
+                     "metric_date":  "2026-06-28",
+                     "net_revenue":  "162951.40"
+                 },
+                 {
+                     "metric_date":  "2026-06-29",
+                     "net_revenue":  "122471.23"
+                 },
+                 {
+                     "metric_date":  "2026-06-30",
+                     "net_revenue":  "136702.86"
+                 },
+                 {
+                     "metric_date":  "2026-07-01",
+                     "net_revenue":  "135133.72"
+                 },
+                 {
+                     "metric_date":  "2026-07-02",
+                     "net_revenue":  "153214.09"
+                 },
+                 {
+                     "metric_date":  "2026-07-03",
+                     "net_revenue":  "163445.53"
+                 },
+                 {
+                     "metric_date":  "2026-07-04",
+                     "net_revenue":  "151171.11"
+                 },
+                 {
+                     "metric_date":  "2026-07-05",
+                     "net_revenue":  "161634.69"
+                 },
+                 {
+                     "metric_date":  "2026-07-06",
+                     "net_revenue":  "118908.74"
+                 },
+                 {
+                     "metric_date":  "2026-07-07",
+                     "net_revenue":  "144080.61"
+                 },
+                 {
+                     "metric_date":  "2026-07-08",
+                     "net_revenue":  "159545.39"
+                 },
+                 {
+                     "metric_date":  "2026-07-09",
+                     "net_revenue":  "161446.28"
+                 },
+                 {
+                     "metric_date":  "2026-07-10",
+                     "net_revenue":  "166755.24"
+                 },
+                 {
+                     "metric_date":  "2026-07-11",
+                     "net_revenue":  "116445.71"
+                 },
+                 {
+                     "metric_date":  "2026-07-12",
+                     "net_revenue":  "142767.97"
+                 },
+                 {
+                     "metric_date":  "2026-07-13",
+                     "net_revenue":  "146278.22"
+                 },
+                 {
+                     "metric_date":  "2026-07-14",
+                     "net_revenue":  "114881.30"
+                 },
+                 {
+                     "metric_date":  "2026-07-15",
+                     "net_revenue":  "162378.40"
+                 },
+                 {
+                     "metric_date":  "2026-07-16",
+                     "net_revenue":  "175629.08"
+                 },
+                 {
+                     "metric_date":  "2026-07-17",
+                     "net_revenue":  "145506.54"
+                 },
+                 {
+                     "metric_date":  "2026-07-18",
+                     "net_revenue":  "166317.65"
+                 },
+                 {
+                     "metric_date":  "2026-07-19",
+                     "net_revenue":  "146850.78"
+                 },
+                 {
+                     "metric_date":  "2026-07-20",
+                     "net_revenue":  "159890.70"
+                 },
+                 {
+                     "metric_date":  "2026-07-21",
+                     "net_revenue":  "173729.91"
+                 },
+                 {
+                     "metric_date":  "2026-07-22",
+                     "net_revenue":  "151310.88"
+                 },
+                 {
+                     "metric_date":  "2026-07-23",
+                     "net_revenue":  "170207.71"
+                 },
+                 {
+                     "metric_date":  "2026-07-24",
+                     "net_revenue":  "143041.34"
+                 },
+                 {
+                     "metric_date":  "2026-07-25",
+                     "net_revenue":  "140500.87"
+                 },
+                 {
+                     "metric_date":  "2026-07-26",
+                     "net_revenue":  "182580.46"
+                 },
+                 {
+                     "metric_date":  "2026-07-27",
+                     "net_revenue":  "171949.65"
+                 },
+                 {
+                     "metric_date":  "2026-07-28",
+                     "net_revenue":  "164234.58"
+                 },
+                 {
+                     "metric_date":  "2026-07-29",
+                     "net_revenue":  "130201.62"
+                 },
+                 {
+                     "metric_date":  "2026-07-30",
+                     "net_revenue":  "140414.55"
+                 },
+                 {
+                     "metric_date":  "2026-07-31",
+                     "net_revenue":  "151364.01"
+                 },
+                 {
+                     "metric_date":  "2026-08-01",
+                     "net_revenue":  "117896.48"
+                 },
+                 {
+                     "metric_date":  "2026-08-02",
+                     "net_revenue":  "137561.45"
+                 },
+                 {
+                     "metric_date":  "2026-08-03",
+                     "net_revenue":  "144158.93"
+                 },
+                 {
+                     "metric_date":  "2026-08-04",
+                     "net_revenue":  "166227.14"
+                 },
+                 {
+                     "metric_date":  "2026-08-05",
+                     "net_revenue":  "151324.60"
+                 },
+                 {
+                     "metric_date":  "2026-08-06",
+                     "net_revenue":  "148906.90"
+                 },
+                 {
+                     "metric_date":  "2026-08-07",
+                     "net_revenue":  "121350.67"
+                 },
+                 {
+                     "metric_date":  "2026-08-08",
+                     "net_revenue":  "170036.59"
+                 },
+                 {
+                     "metric_date":  "2026-08-09",
+                     "net_revenue":  "160152.86"
+                 },
+                 {
+                     "metric_date":  "2026-08-10",
+                     "net_revenue":  "162423.32"
+                 },
+                 {
+                     "metric_date":  "2026-08-11",
+                     "net_revenue":  "138888.67"
+                 },
+                 {
+                     "metric_date":  "2026-08-12",
+                     "net_revenue":  "131574.48"
+                 },
+                 {
+                     "metric_date":  "2026-08-13",
+                     "net_revenue":  "132627.73"
+                 },
+                 {
+                     "metric_date":  "2026-08-14",
+                     "net_revenue":  "137387.98"
+                 },
+                 {
+                     "metric_date":  "2026-08-15",
+                     "net_revenue":  "126554.66"
+                 },
+                 {
+                     "metric_date":  "2026-08-16",
+                     "net_revenue":  "128152.27"
+                 },
+                 {
+                     "metric_date":  "2026-08-17",
+                     "net_revenue":  "137748.81"
+                 },
+                 {
+                     "metric_date":  "2026-08-18",
+                     "net_revenue":  "157811.00"
+                 },
+                 {
+                     "metric_date":  "2026-08-19",
+                     "net_revenue":  "136346.09"
+                 },
+                 {
+                     "metric_date":  "2026-08-20",
+                     "net_revenue":  "164627.76"
+                 },
+                 {
+                     "metric_date":  "2026-08-21",
+                     "net_revenue":  "144913.50"
+                 },
+                 {
+                     "metric_date":  "2026-08-22",
+                     "net_revenue":  "128328.24"
+                 },
+                 {
+                     "metric_date":  "2026-08-23",
+                     "net_revenue":  "160953.66"
+                 },
+                 {
+                     "metric_date":  "2026-08-24",
+                     "net_revenue":  "152527.59"
+                 },
+                 {
+                     "metric_date":  "2026-08-25",
+                     "net_revenue":  "145096.53"
+                 },
+                 {
+                     "metric_date":  "2026-08-26",
+                     "net_revenue":  "162484.56"
+                 },
+                 {
+                     "metric_date":  "2026-08-27",
+                     "net_revenue":  "168505.24"
+                 },
+                 {
+                     "metric_date":  "2026-08-28",
+                     "net_revenue":  "160196.67"
+                 },
+                 {
+                     "metric_date":  "2026-08-29",
+                     "net_revenue":  "134486.62"
+                 },
+                 {
+                     "metric_date":  "2026-08-30",
+                     "net_revenue":  "138754.31"
+                 },
+                 {
+                     "metric_date":  "2026-08-31",
+                     "net_revenue":  "154397.99"
+                 },
+                 {
+                     "metric_date":  "2026-09-01",
+                     "net_revenue":  "139057.19"
+                 },
+                 {
+                     "metric_date":  "2026-09-02",
+                     "net_revenue":  "169776.06"
+                 },
+                 {
+                     "metric_date":  "2026-09-03",
+                     "net_revenue":  "180246.79"
+                 },
+                 {
+                     "metric_date":  "2026-09-04",
+                     "net_revenue":  "164957.08"
+                 },
+                 {
+                     "metric_date":  "2026-09-05",
+                     "net_revenue":  "152326.35"
+                 },
+                 {
+                     "metric_date":  "2026-09-06",
+                     "net_revenue":  "147909.28"
+                 },
+                 {
+                     "metric_date":  "2026-09-07",
+                     "net_revenue":  "182268.52"
+                 },
+                 {
+                     "metric_date":  "2026-09-08",
+                     "net_revenue":  "165829.86"
+                 },
+                 {
+                     "metric_date":  "2026-09-09",
+                     "net_revenue":  "114255.87"
+                 },
+                 {
+                     "metric_date":  "2026-09-10",
+                     "net_revenue":  "146519.29"
+                 },
+                 {
+                     "metric_date":  "2026-09-11",
+                     "net_revenue":  "196583.18"
+                 },
+                 {
+                     "metric_date":  "2026-09-12",
+                     "net_revenue":  "172408.30"
+                 },
+                 {
+                     "metric_date":  "2026-09-13",
+                     "net_revenue":  "148124.46"
+                 },
+                 {
+                     "metric_date":  "2026-09-14",
+                     "net_revenue":  "142870.50"
+                 },
+                 {
+                     "metric_date":  "2026-09-15",
+                     "net_revenue":  "191772.68"
+                 },
+                 {
+                     "metric_date":  "2026-09-16",
+                     "net_revenue":  "132670.58"
+                 },
+                 {
+                     "metric_date":  "2026-09-17",
+                     "net_revenue":  "130092.93"
+                 },
+                 {
+                     "metric_date":  "2026-09-18",
+                     "net_revenue":  "144253.82"
+                 },
+                 {
+                     "metric_date":  "2026-09-19",
+                     "net_revenue":  "123139.06"
+                 }
+             ],
+    "explanation":  "The executive KPI table provides the daily net revenue metric.",
+    "tables_used":  [
+                        "gold.executive_kpis_daily"
+                    ]
+}

@@ -1,0 +1,68 @@
+﻿{
+  "pipeline_run_id": "gold-initial",
+  "checks": 12,
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "check": "silver_gold_order_reconciliation",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "duplicate_gold_keys",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "invalid_order_net_revenue",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "first_order_customer_reconciliation",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "customer_daily_reconciliation",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "product_daily_reconciliation",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "missing_product_categories",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "campaign_spend_reconciliation",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "invalid_campaign_metrics",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "executive_daily_reconciliation",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "invalid_executive_metrics",
+      "status": "PASS",
+      "failure_count": 0
+    },
+    {
+      "check": "gold_pipeline_lineage",
+      "status": "PASS",
+      "failure_count": 0
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+﻿{
+  "pipeline_run_id": "gold-initial",
+  "source_orders": 10000,
+  "gold_rows": 29479,
+  "table_counts": {
+    "order_360": 10000,
+    "customer_daily": 11334,
+    "product_daily": 7200,
+    "channel_campaign_daily": 855,
+    "executive_kpis_daily": 90
+  }
+}

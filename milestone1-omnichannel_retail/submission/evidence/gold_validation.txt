@@ -1,0 +1,24 @@
+﻿       table_name       | rows  
+------------------------+-------
+ channel_campaign_daily |   855
+ customer_daily         | 11334
+ executive_kpis_daily   |    90
+ order_360              | 10000
+ product_daily          |  7200
+(5 rows)
+
+ first_date | last_date  | total_orders | gross_revenue | net_revenue 
+------------+------------+--------------+---------------+-------------
+ 2026-06-22 | 2026-09-19 |        10000 |   15100182.54 | 13429824.83
+(1 row)
+
+ negative_rates | invalid_fraction_rates | invalid_aov 
+----------------+------------------------+-------------
+              0 |                      0 |           0
+(1 row)
+
+ campaign_rows | total_spend | attributed_orders | invalid_conversion_rates | negative_roas | minimum_conversion_rate | maximum_conversion_rate 
+---------------+-------------+-------------------+--------------------------+---------------+-------------------------+-------------------------
+           855 |   231441.30 |              2361 |                        0 |             0 |                  0.0000 |                  1.0000
+(1 row)
+

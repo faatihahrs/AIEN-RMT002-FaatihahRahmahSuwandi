@@ -1,0 +1,10 @@
+﻿dag_id                      | execution_date            | task_id                           | state   | start_date                       | end_date                        
+============================+===========================+===================================+=========+==================================+=================================
+omnichannel_retail_pipeline | 2026-10-20T14:59:04+00:00 | validate_raw                      | success | 2026-10-20T15:00:10.302437+00:00 | 2026-10-20T15:00:11.295006+00:00
+omnichannel_retail_pipeline | 2026-10-20T14:59:04+00:00 | initialize_schemas                | success | 2026-10-20T15:00:15.971135+00:00 | 2026-10-20T15:00:16.288514+00:00
+omnichannel_retail_pipeline | 2026-10-20T14:59:04+00:00 | load_bronze                       | success | 2026-10-20T15:00:20.575911+00:00 | 2026-10-20T15:03:03.695898+00:00
+omnichannel_retail_pipeline | 2026-10-20T14:59:04+00:00 | build_silver                      | success | 2026-10-20T15:03:08.393706+00:00 | 2026-10-20T15:03:14.599123+00:00
+omnichannel_retail_pipeline | 2026-10-20T14:59:04+00:00 | quality_gate                      | success | 2026-10-20T15:03:18.814465+00:00 | 2026-10-20T15:03:19.319763+00:00
+omnichannel_retail_pipeline | 2026-10-20T14:59:04+00:00 | build_gold                        | success | 2026-10-20T15:03:23.372143+00:00 | 2026-10-20T15:03:24.776368+00:00
+omnichannel_retail_pipeline | 2026-10-20T14:59:04+00:00 | validate_gold_and_record_metadata | success | 2026-10-20T15:03:29.363996+00:00 | 2026-10-20T15:03:29.846641+00:00
+                                                                                                                                                                           

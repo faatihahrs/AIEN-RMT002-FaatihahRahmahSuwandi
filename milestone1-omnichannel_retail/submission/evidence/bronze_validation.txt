@@ -1,0 +1,29 @@
+﻿             source_file             | record_count 
+-------------------------------------+--------------
+ events/payment_events.json          |        22582
+ events/refund_events.json           |         4121
+ events/return_events.json           |         3553
+ events/support_events.json          |         2971
+ events/web_events.json              |        30986
+ inventory/inventory_snapshots.csv   |        35040
+ operational/customer_addresses.json |         2500
+ operational/customer_profiles.json  |         2777
+ operational/customers.json          |         2500
+ operational/order_items.json        |        24960
+ operational/order_promotions.json   |        15729
+ operational/orders.json             |        10001
+ operational/product_categories.json |           86
+ operational/products.json           |           80
+ operational/promotions.json         |           12
+ operational/sales_channels.json     |            4
+ operational/stores.json             |            5
+ reference/campaign_spend.csv        |          855
+ reference/city_reference.json       |            8
+(19 rows)
+
+     pipeline_run_id      | stage_name  | status  | records_read | records_accepted | records_rejected 
+--------------------------+-------------+---------+--------------+------------------+------------------
+ bronze-idempotency-check | load_bronze | SUCCESS |       158770 |                0 |                0
+ bronze-initial           | load_bronze | SUCCESS |       158770 |                0 |                0
+(2 rows)
+
