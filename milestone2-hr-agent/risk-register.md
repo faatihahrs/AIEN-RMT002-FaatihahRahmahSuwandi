@@ -1,0 +1,26 @@
+# Risk Register
+
+Semua data pada proyek ini sintetis. Register ini mendokumentasikan risiko yang tetap relevan sebelum sistem pendidikan digunakan dengan data HR nyata.
+
+| ID   | Risiko                                  | Dampak   | Likelihood | Owner                 | Mitigasi                                                                       | Evidence                                                                        |
+| ---- | --------------------------------------- | -------- | ---------- | --------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| R-01 | IDOR atau akses data pegawai lain       | Critical | Medium     | Backend owner         | Identity dari bearer token; tool tidak menerima employee ID; repository scope  | `test_trace_cannot_be_read_by_another_employee`, evaluation `balance-other-007` |
+| R-02 | Prompt injection dari user atau dokumen | High     | High       | Agent owner           | Retrieved text dianggap data; tool allowlist; system instruction; bounded loop | `prompt-injection-011`, policy trust boundary                                   |
+| R-03 | Leave request dibuat tanpa konfirmasi   | Critical | Medium     | Action workflow owner | Proposal terpisah; explicit confirmation endpoint; transaction                 | Manual before/after count dan action tests                                      |
+| R-04 | Agent menyetujui cuti                   | Critical | Low        | Product owner         | Tidak ada approval tool; status dibatasi `pending_manager_review`              | Confirmation output dan hard-gate evaluation                                    |
+| R-05 | Duplicate request karena retry          | High     | Medium     | Database owner        | Idempotency key dan unique persistence                                         | Confirmation replay menghasilkan request ID sama                                |
+| R-06 | Citation palsu atau tidak grounded      | High     | Medium     | RAG owner             | Run-scoped document allowlist; citation parser; abstention                     | 100% citation validity evaluation                                               |
+| R-07 | Retrieval melewatkan kebijakan relevan  | High     | Medium     | RAG owner             | Hybrid retrieval, reranking, versioned chunks, recall@3 gate                   | 100% retrieval recall@3                                                         |
+| R-08 | PII atau secret masuk trace             | Critical | Medium     | Security owner        | Redaction, trace schema terbatas, no raw prompt/tool payload                   | `medical-pii-012`, `.dockerignore`, trace tests                                 |
+| R-09 | Redis outage mengubah jawaban           | Medium   | Medium     | Platform owner        | Resilient cache; PostgreSQL tetap source of truth                              | Cache degradation behavior and readiness                                        |
+| R-10 | Provider timeout atau API error         | Medium   | Medium     | Platform owner        | Bounded retry, timeout, safe abstention, no side effect                        | Agent reliability tests                                                         |
+| R-11 | Race condition saat konfirmasi          | High     | Low        | Database owner        | Transaction, row locking, idempotency                                          | Repository confirmation implementation                                          |
+| R-12 | Stale policy version                    | High     | Medium     | HR policy owner       | Version/effective-date metadata dan idempotent re-index                        | Stable chunk metadata test                                                      |
+| R-13 | API key masuk image/repository          | Critical | Low        | DevOps owner          | Runtime-only environment, `.env` ignored, `.dockerignore`                      | Docker build without secret; ignore checks                                      |
+| R-14 | Container berjalan sebagai root         | High     | Low        | DevOps owner          | Dedicated UID/GID 10001                                                        | `docker compose exec api id`                                                    |
+| R-15 | Model behavior berubah                  | High     | Medium     | Evaluation owner      | Versioned 15-case evaluation and release gate                                  | Latest report: GO, all metrics 100%                                             |
+| R-16 | Monitoring tidak ditindaklanjuti        | Medium   | Medium     | Operations owner      | Aggregate metrics, actionable rules, admin-only endpoint                       | Monitoring UI and `/api/v1/monitoring/alerts`                                   |
+
+## Residual risk
+
+Sistem ini belum memiliki enterprise SSO, key rotation service, encryption-key management, approval workflow manusia lengkap, policy authoring workflow, retention automation, rate limiting production, distributed tracing, atau formal privacy impact assessment. Sistem tidak boleh digunakan untuk data pegawai nyata sebelum kontrol tersebut ditambahkan dan diuji.

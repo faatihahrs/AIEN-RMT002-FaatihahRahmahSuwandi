@@ -1,0 +1,142 @@
+x-app-environment: &app-environment
+  DATABASE_URL: postgresql://hr_app:hr_app@postgres:5432/hr_assistant
+  REDIS_URL: redis://redis:6379/0
+  OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+  OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
+  AGENT_MODEL: ${AGENT_MODEL:-gpt-6-luna}
+  EMBEDDING_MODEL: ${EMBEDDING_MODEL:-text-embedding-3-small}
+  EMBEDDING_DIMENSIONS: ${EMBEDDING_DIMENSIONS:-1536}
+  POLICY_INDEX_VERSION: ${POLICY_INDEX_VERSION:-policies-2026-01}
+  MODEL_MODE: live
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: hr_assistant
+      POSTGRES_USER: hr_app
+      POSTGRES_PASSWORD: hr_app
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U hr_app -d hr_assistant
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  seed:
+    build: .
+    command:
+      - python
+      - -m
+      - src.setup_lab
+    environment:
+      <<: *app-environment
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    build: .
+    environment:
+      <<: *app-environment
+    ports:
+      - "${API_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      seed:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - >-
+          import urllib.request;
+          urllib.request.urlopen(
+          'http://127.0.0.1:8000/readyz',
+          timeout=5).read()
+      interval: 10s
+      timeout: 6s
+      retries: 20
+      start_period: 10s
+
+  streamlit:
+    build: .
+    command:
+      - streamlit
+      - run
+      - app.py
+      - --server.address
+      - 0.0.0.0
+      - --server.port
+      - "8501"
+    environment:
+      API_URL: http://api:8000
+    ports:
+      - "${STREAMLIT_PORT:-8501}:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+
+  test:
+    build: .
+    command:
+      - python
+      - -m
+      - pytest
+      - -m
+      - not live
+      - -q
+    environment:
+      MODEL_MODE: fake
+    depends_on:
+      seed:
+        condition: service_completed_successfully
+    profiles:
+      - test
+
+  evaluation:
+    build: .
+    command:
+      - python
+      - -m
+      - src.run_evaluation
+      - --base-url
+      - http://api:8000
+    environment:
+      API_URL: http://api:8000
+      EVALUATION_TOKEN: token-alya
+    volumes:
+      - ./outputs:/app/outputs
+    depends_on:
+      api:
+        condition: service_healthy
+    profiles:
+      - evaluation
+
+volumes:
+  postgres_data:
